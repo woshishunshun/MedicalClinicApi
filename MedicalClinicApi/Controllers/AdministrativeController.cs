@@ -14,6 +14,6 @@ namespace MedicalClinicApi.Controllers
     public class AdministrativeController : ApiController
     {
         AdministratorBll bl = new AdministratorBll();
-
+        
     }
 }
