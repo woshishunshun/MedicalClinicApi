@@ -18,7 +18,7 @@ namespace MedicalClinicApi.Controllers
             return bll.Login(Name, Pwd);
         }
         /// <summary>
-        /// 显示护士
+        /// 显示护士dd
         /// </summary>
         /// <param name="Name"></param>
         /// <returns></returns>
