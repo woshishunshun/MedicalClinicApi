@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-   public class StaffLogin
+    public class StaffLogin
     {
-        public int Sl_Id { get; set; }
-        public string Sl_Name { get; set; }
-        public string Sl_Pwd { get; set; }
-        public int Sl_Type { get; set; }
+        public int Sl_Id { get; set; } //主键  登录表Id
+        public string Sl_Name { get; set; } // 登陆名称
+        public string Sl_Pwd { get; set; } // 登陆密码
+        public int Sl_Type { get; set; } // 员工类型
     }
 }
