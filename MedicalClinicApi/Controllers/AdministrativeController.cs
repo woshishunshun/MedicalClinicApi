@@ -13,5 +13,7 @@ namespace MedicalClinicApi.Controllers
     //Administrative科室表
     public class AdministrativeController : ApiController
     {
+        AdministratorBll bl = new AdministratorBll();
+
     }
 }

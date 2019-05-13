@@ -9,8 +9,8 @@ using BLL;
 
 namespace MedicalClinicApi.Controllers
 {
-    //管理员表
     public class AdministratorController : ApiController
     {
+       ad
     }
 }
