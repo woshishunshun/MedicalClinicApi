@@ -12,6 +12,10 @@ namespace MedicalClinicApi.Controllers
     // 药品
     public class DrugController : ApiController
     {
-
+        DrugBll bl = new DrugBll();
+        public List<Drug> GetDrug()
+        {
+            return bl.GetDrug();
+        }
     }
 }
