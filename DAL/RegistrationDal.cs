@@ -11,6 +11,16 @@ namespace DAL
     //挂号
     public class RegistrationDal
     {
-        
+        /// <summary>
+        /// 挂号
+        /// </summary>
+        /// <param name="re"></param>
+        /// <returns></returns>
+        public int PatientLoginAdd(Registration re)
+        {
+            string sql = "insert into Patient values(" + re.Pat_Id + ",'" + re.Reg_Time + "'," + re.Adm_Id + "," + re.Doc_Id + "," + re.Reg_Type + ")";
+            var da = DBHelper.ExecuteNonQuery(sql);
+            return da;
+        }
     }
 }

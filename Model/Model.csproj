@@ -45,6 +45,7 @@
     <Compile Include="Doctor.cs" />
     <Compile Include="Doctorecord.cs" />
     <Compile Include="Drug.cs" />
+    <Compile Include="Nurse.cs" />
     <Compile Include="Patient.cs" />
     <Compile Include="PatientLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

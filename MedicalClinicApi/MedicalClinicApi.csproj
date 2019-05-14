@@ -89,6 +89,7 @@
     <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\DoctorecordController.cs" />
     <Compile Include="Controllers\DrugController.cs" />
+    <Compile Include="Controllers\NurseController.cs" />
     <Compile Include="Controllers\PatientController.cs" />
     <Compile Include="Controllers\PatientLoginController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />

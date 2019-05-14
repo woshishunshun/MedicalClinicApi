@@ -16,7 +16,8 @@ namespace DAL
         /// <returns></returns>
         public List<Doctorecord> GetDoctorecords()
         {
-            return DBHelper.GetList<Doctorecord>("select * from Doctorecord");
+            return DBHelper.GetList<Doctorecord>(@"select * from Doctorecord dc join Doctor d on dc.Doc_Id = d.Doc_Id join Administrative a on dc.Adm_Id = a.Adm_Id
+join Patient p on dc.Pat_Id = p.Pat_Id");
         }
         /// <summary>
         /// 添加就诊记录
@@ -58,7 +59,7 @@ namespace DAL
         /// <returns></returns>
         public List<Returnrecord> GetReturnrecords()
         {
-            return DBHelper.GetList<Returnrecord>("select * from Doctorecord");
+            return DBHelper.GetList<Returnrecord>("select * from Returnrecord r join Patient p on r.Pat_Id = p.Pat_Id");
         }
         
     }
