@@ -11,5 +11,6 @@ namespace MedicalClinicApi.Controllers
 {
     public class NurseController : ApiController
     {
+        NurseBll bll = new NurseBll();
     }
 }
