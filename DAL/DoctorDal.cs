@@ -60,6 +60,7 @@ join Patient p on dc.Pat_Id = p.Pat_Id");
         public List<Returnrecord> GetReturnrecords()
         {
             return DBHelper.GetList<Returnrecord>("select * from Returnrecord r join Patient p on r.Pat_Id = p.Pat_Id");
-        }             
+        } 
+       
     }
 }
