@@ -13,7 +13,14 @@ namespace MedicalClinicApi.Controllers
     //Administrative科室表
     public class AdministrativeController : ApiController
     {
-        AdministratorBll bl = new AdministratorBll();
-        
+        AdministrativeBll bll = new AdministrativeBll();
+        /// <summary>
+        /// 查询科室表 用于绑定下拉列表
+        /// </summary>
+        /// <returns></returns>
+        public List<Administrative> ShowAdministrative()
+        {
+            return bll.ShowAdministrative();
+        }
     }
 }
