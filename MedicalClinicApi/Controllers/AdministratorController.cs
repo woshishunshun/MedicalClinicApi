@@ -71,45 +71,45 @@ namespace MedicalClinicApi.Controllers
         /// </summary>
         /// <param name="Name"></param>
         /// <returns></returns>
-        public List<Registration> RegistrationShow(string Name)
+        public List<Nurse> NurseShow(string Name)
         {
-            return bll.RegistrationShow(Name);
+            return bll.NurseShow(Name);
         }
         /// <summary>
         /// 添加护士
         /// </summary>
         /// <param name="m"></param>
         /// <returns></returns>
-        public int RegistrationAdd(Registration m)
+        public int NurseAdd(Nurse m)
         {
-            return bll.RegistrationAdd(m);
+            return bll.NurseAdd(m);
         }
         /// <summary>
         /// 删除医生信息
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public int DeleteRegistration(int id)
+        public int DeleteNurse(int id)
         {
-            return bll.DeleteRegistration(id);
+            return bll.DeleteNurse(id);
         }
         /// <summary>
         /// 查询要修改的医生Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public List<Registration> UpdRegistration(int id)
+        public List<Nurse> UpdNurse(int id)
         {
-            return bll.UpdRegistration(id);
+            return bll.UpdNurse(id);
         }
         /// <summary>
         /// 修改反填数据
         /// </summary>
         /// <param name="m"></param>
         /// <returns></returns>
-        public int EditRegistration(Registration m)
+        public int EditNurse(Nurse m)
         {
-            return bll.EditRegistration(m);
+            return bll.EditNurse(m);
         }
     }
 }

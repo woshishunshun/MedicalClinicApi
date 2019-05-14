@@ -71,45 +71,45 @@ namespace BLL
         /// </summary>
         /// <param name="Name"></param>
         /// <returns></returns>
-        public List<Registration> RegistrationShow(string Name)
+        public List<Nurse> NurseShow(string Name)
         {
-            return dal.RegistrationShow(Name);
+            return dal.NurseShow(Name);
         }
         /// <summary>
         /// 添加护士
         /// </summary>
         /// <param name="m"></param>
         /// <returns></returns>
-        public int RegistrationAdd(Registration m)
+        public int NurseAdd(Nurse m)
         {
-            return dal.RegistrationAdd(m);
+            return dal.NurseAdd(m);
         }
         /// <summary>
         /// 删除医生信息
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public int DeleteRegistration(int id)
+        public int DeleteNurse(int id)
         {
-            return dal.DeleteRegistration(id);
+            return dal.DeleteNurse(id);
         }
         /// <summary>
         /// 查询要修改的医生Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public List<Registration> UpdRegistration(int id)
+        public List<Nurse> UpdNurse(int id)
         {
-            return dal.UpdRegistration(id);
+            return dal.UpdNurse(id);
         }
         /// <summary>
         /// 修改反填数据
         /// </summary>
         /// <param name="m"></param>
         /// <returns></returns>
-        public int EditRegistration(Registration m)
+        public int EditNurse(Nurse m)
         {
-            return dal.EditRegistration(m);
+            return dal.EditNurse(m);
         }
     }
 }

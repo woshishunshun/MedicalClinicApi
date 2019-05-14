@@ -95,18 +95,16 @@ namespace DAL
         /// </summary>
         /// <param name="Name"></param>
         /// <returns></returns>
-        public List<Registration> RegistrationShow(string Name)
+        public List<Nurse> NurseShow(string Name)
         {
-            string sql = @"select *from Registration inner join Patient on Registration.Pat_Id=Patient.Pat_Id
-                            inner join Administrative on Registration.Adm_Id = Administrative.Adm_Id
-                            inner join Doctor on Registration.Doc_Id = Doctor.Doc_Id where 1=1";
+            string sql = @"select *from Nurse where 1=1";
             if (!string.IsNullOrEmpty(Name))
             {
-                sql += " and Pat_Name like '%{0}%'" + Name;
+                sql += " and N_Name like '%{0}%'" + Name;
             }
             var result = DBHelper.ExecuteScalar(sql);
             var table = JsonConvert.SerializeObject(result);
-            var list = JsonConvert.DeserializeObject<List<Registration>>(table);
+            var list = JsonConvert.DeserializeObject<List<Nurse>>(table);
             return list;
         }
         /// <summary>
@@ -114,9 +112,9 @@ namespace DAL
         /// </summary>
         /// <param name="m"></param>
         /// <returns></returns>
-        public int RegistrationAdd(Registration m)
+        public int NurseAdd(Nurse m)
         {
-            string sql = string.Format("insert into Registration values('{0}','{1}','{2}','{3}','{4}')", m.Pat_Id, m.Reg_Time, m.Adm_Id, m.Doc_Id, m.Reg_Type);
+            string sql = string.Format("insert into Nurse values('{0}','{1}','{2}','{3}','{4}')", m.N_Name, m.N_Age, m.N_Sex, m.N_Time, m.N_Type);
             var result = DBHelper.ExecuteNonQuery(sql);
             return result;
         }
@@ -125,9 +123,9 @@ namespace DAL
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public int DeleteRegistration(int id)
+        public int DeleteNurse(int id)
         {
-            string sql = "delete from Registration where Doc_Id='{0}'" + id;
+            string sql = "delete from Nurse where N_Id='{0}'" + id;
             var result = DBHelper.ExecuteNonQuery(sql);
             return result;
         }
@@ -136,12 +134,12 @@ namespace DAL
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public List<Registration> UpdRegistration(int id)
+        public List<Nurse> UpdNurse(int id)
         {
-            string sql = "select *from Registration where Doc_Id='{0}'" + id;
+            string sql = "select *from Nurse where N_Id='{0}'" + id;
             var result = DBHelper.ExecuteScalar(sql);
             var table = JsonConvert.SerializeObject(result);
-            var list = JsonConvert.DeserializeObject<List<Registration>>(table);
+            var list = JsonConvert.DeserializeObject<List<Nurse>>(table);
             return list;
         }
         /// <summary>
@@ -149,9 +147,9 @@ namespace DAL
         /// </summary>
         /// <param name="m"></param>
         /// <returns></returns>
-        public int EditRegistration(Registration m)
+        public int EditNurse(Nurse m)
         {
-            string sql = string.Format("update Registration set Pat_Id='{0}',Reg_Time='{1}',Adm_Id='{2}',Doc_Id='{3}',Reg_Type='{4}'", m.Pat_Id, m.Reg_Time, m.Adm_Id, m.Doc_Id, m.Reg_Type);
+            string sql = string.Format("update Nurse set N_Name='{0}',N_Age='{1}',N_Sex='{2}',N_Time='{3}',N_Type='{4}'", m.N_Name, m.N_Age, m.N_Sex, m.N_Time, m.N_Type);
             var result = DBHelper.ExecuteNonQuery(sql);
             return result;
         }
