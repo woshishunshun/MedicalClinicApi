@@ -65,5 +65,15 @@ namespace MedicalClinicApi.Controllers
         {
             return bl.AddReturnrecord(r);
         }
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="name">姓名</param>
+        /// <param name="pwd">密码</param>
+        /// <returns></returns>
+        public int LoginDoctor(string name, string pwd)
+        {
+            return dl.LoginDoctor(name, pwd);
+        }
     }
 }
