@@ -10,20 +10,24 @@ namespace DAL
     //管理员
     public class AdministratorDal
     {
-
+        
         public List<StaffLogin> Login(string Name, string Pwd)
         {
             string sql = "select *from StaffLogin where Sl_Name='"+Name+"' and Sl_Pwd='"+Pwd+"'";
-            var result = DBHelper.ExecuteScalar(sql);
-            var table = JsonConvert.SerializeObject(result);
-            var list = JsonConvert.DeserializeObject<List<StaffLogin>>(table);
-            return list;
+            return DBHelper.GetList<StaffLogin>(sql);
+        }
+        public List<StaffLogin> Login()
+        {
+            string sql = "select *from StaffLogin";
+            return DBHelper.GetList<StaffLogin>(sql);
+            
         }
         /// <summary>
         /// 显示医生
         /// </summary>
         /// <param name="Name"></param>
         /// <returns></returns>
+
         public List<Doctor> doctorsShow(string Name)
         {
             string sql = "select *from Doctor inner join  Administrative on Doctor.Adm_Id=Administrative.Adm_Id where 1=1";
@@ -31,10 +35,8 @@ namespace DAL
             {
                 sql += " and Doc_Name like '%{0}%'" + Name;
             }
-            var result = DBHelper.ExecuteScalar(sql);
-            var table = JsonConvert.SerializeObject(result);
-            var list = JsonConvert.DeserializeObject<List<Doctor>>(table);
-            return list;
+            var result = DBHelper.GetList<Doctor>(sql);
+            return result;
         }
         /// <summary>
         /// 添加医生
@@ -66,10 +68,8 @@ namespace DAL
         public List<Doctor> UpdDoctor(int id)
         {
             string sql = "select *from Doctor where Doc_Id='{0}'" + id;
-            var result = DBHelper.ExecuteScalar(sql);
-            var table = JsonConvert.SerializeObject(result);
-            var list = JsonConvert.DeserializeObject<List<Doctor>>(table);
-            return list;
+            var result = DBHelper.GetList<Doctor>(sql);
+            return result;
         }
         /// <summary>
         /// 修改反填数据
@@ -85,10 +85,8 @@ namespace DAL
         public List<StaffLogin> Login1(string Name, string Pwd)
         {
             string sql = "select *from StaffLogin where Sl_Name='" + Name + "' and Sl_Pwd='" + Pwd + "'";
-            var result = DBHelper.ExecuteScalar(sql);
-            var table = JsonConvert.SerializeObject(result);
-            var list = JsonConvert.DeserializeObject<List<StaffLogin>>(table);
-            return list;
+            var result = DBHelper.GetList<StaffLogin>(sql);
+            return result;
         }
         /// <summary>
         /// 显示护士
@@ -102,10 +100,8 @@ namespace DAL
             {
                 sql += " and N_Name like '%{0}%'" + Name;
             }
-            var result = DBHelper.ExecuteScalar(sql);
-            var table = JsonConvert.SerializeObject(result);
-            var list = JsonConvert.DeserializeObject<List<Nurse>>(table);
-            return list;
+            var result = DBHelper.GetList<Nurse>(sql);
+            return result;
         }
         /// <summary>
         /// 添加护士
@@ -137,10 +133,8 @@ namespace DAL
         public List<Nurse> UpdNurse(int id)
         {
             string sql = "select *from Nurse where N_Id='{0}'" + id;
-            var result = DBHelper.ExecuteScalar(sql);
-            var table = JsonConvert.SerializeObject(result);
-            var list = JsonConvert.DeserializeObject<List<Nurse>>(table);
-            return list;
+            var result = DBHelper.GetList<Nurse>(sql);
+            return result;
         }
         /// <summary>
         /// 修改反填数据
@@ -153,5 +147,7 @@ namespace DAL
             var result = DBHelper.ExecuteNonQuery(sql);
             return result;
         }
+
+         
     }
 }

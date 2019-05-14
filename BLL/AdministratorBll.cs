@@ -15,6 +15,10 @@ namespace BLL
         {
             return dal.Login(Name, Pwd);
         }
+        public List<StaffLogin> Login()
+        {
+            return dal.Login();
+        }
         /// <summary>
         /// 显示医生
         /// </summary>

@@ -12,16 +12,14 @@ namespace MedicalClinicApi.Controllers
     public class AdministratorController : ApiController
     {
         AdministratorBll bll = new AdministratorBll();
-        public List<StaffLogin> Login(string Name, string Pwd)
-        {
-            return bll.Login(Name, Pwd);
-        }
+
         /// <summary>
         /// 显示医生
         /// </summary>
         /// <param name="Name"></param>
         /// <returns></returns>
-        public List<Doctor> doctorsShow(string Name)
+        [HttpGet]
+        public List<Doctor> doctorsShow(string Name="")
         {
             return bll.doctorsShow(Name);
         }
@@ -30,6 +28,7 @@ namespace MedicalClinicApi.Controllers
         /// </summary>
         /// <param name="m"></param>
         /// <returns></returns>
+        [HttpPost]
         public int DoctorAdd(Doctor m)
         {
             return bll.DoctorAdd(m);
@@ -39,6 +38,7 @@ namespace MedicalClinicApi.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [HttpDelete]
         public int DeleteDoctor(int id)
         {
             return bll.DeleteDoctor(id);
@@ -48,6 +48,7 @@ namespace MedicalClinicApi.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [HttpGet]
         public List<Doctor> UpdDoctor(int id)
         {
             return bll.UpdDoctor(id);
@@ -57,10 +58,12 @@ namespace MedicalClinicApi.Controllers
         /// </summary>
         /// <param name="m"></param>
         /// <returns></returns>
+        [HttpPut]
         public int EditDoctor(Doctor m)
         {
             return bll.EditDoctor(m);
         }
+        [HttpGet]
         public List<StaffLogin> Login1(string Name, string Pwd)
         {
             return bll.Login(Name, Pwd);
@@ -71,6 +74,7 @@ namespace MedicalClinicApi.Controllers
         /// </summary>
         /// <param name="Name"></param>
         /// <returns></returns>
+        [HttpGet]
         public List<Nurse> NurseShow(string Name)
         {
             return bll.NurseShow(Name);
@@ -80,6 +84,7 @@ namespace MedicalClinicApi.Controllers
         /// </summary>
         /// <param name="m"></param>
         /// <returns></returns>
+        [HttpPost]
         public int NurseAdd(Nurse m)
         {
             return bll.NurseAdd(m);
@@ -89,6 +94,7 @@ namespace MedicalClinicApi.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [HttpDelete]
         public int DeleteNurse(int id)
         {
             return bll.DeleteNurse(id);
@@ -98,6 +104,7 @@ namespace MedicalClinicApi.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [HttpGet]
         public List<Nurse> UpdNurse(int id)
         {
             return bll.UpdNurse(id);
@@ -107,9 +114,16 @@ namespace MedicalClinicApi.Controllers
         /// </summary>
         /// <param name="m"></param>
         /// <returns></returns>
+        [HttpPut]
         public int EditNurse(Nurse m)
         {
             return bll.EditNurse(m);
         }
+        [HttpGet]
+        public List<StaffLogin> Login()
+        {
+            return bll.Login();
+        }
+
     }
 }
