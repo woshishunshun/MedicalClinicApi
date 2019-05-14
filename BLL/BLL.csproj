@@ -46,6 +46,7 @@
     <Compile Include="DoctorDalBll.cs" />
     <Compile Include="DoctorecordBll.cs" />
     <Compile Include="DrugBll.cs" />
+    <Compile Include="NurseBll.cs" />
     <Compile Include="PatientBll.cs" />
     <Compile Include="PatientLoginBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

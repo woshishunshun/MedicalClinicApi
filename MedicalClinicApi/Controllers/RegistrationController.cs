@@ -13,6 +13,14 @@ namespace MedicalClinicApi.Controllers
     public class RegistrationController : ApiController
     {
         RegistrationBll bll = new RegistrationBll();
-       
+        /// <summary>
+        /// 挂号
+        /// </summary>
+        /// <param name="re"></param>
+        /// <returns></returns>
+        public int PatientLoginAdd(Registration re)
+        {
+            return bll.PatientLoginAdd(re);
+        }
     }
 }

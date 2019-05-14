@@ -52,6 +52,7 @@
     <Compile Include="DoctorDal.cs" />
     <Compile Include="DoctorecordDal.cs" />
     <Compile Include="DrugDal.cs" />
+    <Compile Include="NurseDal.cs" />
     <Compile Include="PatientDal.cs" />
     <Compile Include="PatientLoginDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
