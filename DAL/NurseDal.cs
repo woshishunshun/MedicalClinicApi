@@ -46,5 +46,17 @@ namespace DAL
             var da = DBHelper.ExecuteNonQuery(sql);
             return da;
         }
+        /// <summary>
+        /// 护士账号登录
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="pwd"></param>
+        /// <returns></returns>
+        public int NurseLogin(string name, string pwd)
+        {
+            string strSql = "select count(*) from StaffLogin where Sl_Name='" + name + "' and Sl_Pwd='" + pwd + "'";
+            var da = DBHelper.ExecuteScalar(strSql);
+            return Convert.ToInt32(da);
+        }
     }
 }

@@ -43,5 +43,16 @@ namespace MedicalClinicApi.Controllers
         {
             return bll.PatientLoginAdd(re);
         }
+        /// <summary>
+        /// 护士账号登录
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="pwd"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public int NurseLogin(string name, string pwd)
+        {
+            return bll.NurseLogin(name, pwd);
+        }
     }
 }

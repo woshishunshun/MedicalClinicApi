@@ -39,5 +39,15 @@ namespace BLL
         {
             return dal.PatientLoginAdd(re);
         }
+        /// <summary>
+        /// 护士账号登录
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="pwd"></param>
+        /// <returns></returns>
+        public int NurseLogin(string name, string pwd)
+        {
+            return dal.NurseLogin(name,pwd);
+        }
     }
 }
