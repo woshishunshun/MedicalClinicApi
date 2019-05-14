@@ -74,7 +74,8 @@ namespace MedicalClinicApi.Controllers
         [HttpGet]
         public int LoginDoctor(string name, string pwd)
         {
-            return dl.LoginDoctor(name, pwd);
+            int i = dl.LoginDoctor(name, pwd);
+            return i;
         }
     }
 }
