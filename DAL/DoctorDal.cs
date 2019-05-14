@@ -61,6 +61,16 @@ join Patient p on dc.Pat_Id = p.Pat_Id");
         {
             return DBHelper.GetList<Returnrecord>("select * from Returnrecord r join Patient p on r.Pat_Id = p.Pat_Id");
         }
-        
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="name">姓名</param>
+        /// <param name="pwd">密码</param>
+        /// <returns></returns>
+        public int LoginDoctor(string name, string pwd)
+        {
+            string sql = string.Format("select count(*) from StaffLogin where Sl_Name='{0}' and Sl_Pwd='{1}'", name, pwd);
+            return DBHelper.ExecuteNonQuery(sql);
+        }
     }
 }

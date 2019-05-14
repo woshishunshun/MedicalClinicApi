@@ -13,22 +13,13 @@ namespace BLL
     {
         PatientDal dal = new PatientDal();
         /// <summary>
-        /// 病人信息添加
+        /// 完善病人信息
         /// </summary>
-        /// <param name="pa"></param>
+        /// <param name="patient"></param>
         /// <returns></returns>
-        public int PatientAdd(Patient pa)
+        public int PatientInfo(Patient patient)
         {
-            return dal.PatientAdd(pa);
-        }
-        /// <summary>
-        /// 病人信息修改
-        /// </summary>
-        /// <param name="pa"></param>
-        /// <returns></returns>
-        public int PatientUpdate(Patient pa)
-        {
-            return dal.PatientUpdate(pa);
+            return dal.PatientInfo(patient);
         }
     }
 }
