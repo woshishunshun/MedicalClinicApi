@@ -20,7 +20,7 @@ namespace BLL
             return dal.Login();
         }
         /// <summary>
-        /// 显示医生
+        /// 显示医生fasdf
         /// </summary>
         /// <param name="Name"></param>
         /// <returns></returns>
