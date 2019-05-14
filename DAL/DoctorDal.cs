@@ -69,7 +69,7 @@ join Patient p on dc.Pat_Id = p.Pat_Id");
         /// <returns></returns>
         public int LoginDoctor(string name, string pwd)
         {
-            string sql = string.Format("select count(*) from StaffLogin where Sl_Name='{0}' and Sl_Pwd='{1}'", name, pwd);
+            string sql = string.Format("select count(*) from StaffLogin where Sl_Name='{0}' and Sl_Pwd='{1}' and Sl_Type=1", name, pwd);
             return DBHelper.ExecuteNonQuery(sql);
         }
     }

@@ -71,6 +71,7 @@ namespace MedicalClinicApi.Controllers
         /// <param name="name">姓名</param>
         /// <param name="pwd">密码</param>
         /// <returns></returns>
+        [HttpGet]
         public int LoginDoctor(string name, string pwd)
         {
             return dl.LoginDoctor(name, pwd);
