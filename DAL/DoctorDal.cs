@@ -45,13 +45,7 @@ join Patient p on dc.Pat_Id = p.Pat_Id");
         /// <returns></returns>
         public int UptRegistrations(Registration r)
         {
-            string sql = string.Format(@"UPDATE [dbo].[Registration]
-   SET[Pat_Id] = '{0}',
-      ,[Reg_Time] ='{1}',
-      ,[Adm_Id] = '{2}',
-      ,[Doc_Id] = '{3}',
-      ,[Reg_Type] = '{4}',
- WHERE Reg_Id = '{5}'", r.Pat_Id, r.Reg_Time, r.Adm_Id, r.Doc_Id, r.Reg_Type, r.Reg_Id);
+            string sql = string.Format(@"UPDATE [dbo].[Registration] SET[Pat_Id] = '{0}',[Reg_Time] ='{1}' ,[Adm_Id] = '{2}',[Doc_Id] = '{3}' ,[Reg_Type] = '{4}' WHERE Reg_Id = '{5}'", r.Pat_Id, r.Reg_Time, r.Adm_Id, r.Doc_Id, r.Reg_Type, r.Reg_Id);
             return DBHelper.ExecuteNonQuery(sql);
         }
         /// <summary>
