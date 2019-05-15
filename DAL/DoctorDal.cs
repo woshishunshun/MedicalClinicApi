@@ -35,7 +35,8 @@ join Patient p on dc.Pat_Id = p.Pat_Id");
         /// <returns></returns>
         public List<Registration> GetRegistrations()
         {
-            return DBHelper.GetList<Registration>("select * from Doctorecord");
+            return DBHelper.GetList<Registration>(@"select * from [Registration] r join Patient p on p.Pat_Id = r.Pat_Id join Administrative a on a.Adm_Id = r.Adm_Id
+  join Doctor d on d.Doc_Id = r.Doc_Id");
         }
         /// <summary>
         /// 修改病人挂号状态
