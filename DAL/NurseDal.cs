@@ -24,18 +24,6 @@ namespace DAL
             return jd;
         }
         /// <summary>
-        /// 病人信息添加
-        /// </summary>
-        /// <param name="pa"></param>
-        /// <returns></returns>
-        public int PatientAdd(Patient pa)
-        {
-            string sql = "insert into Patient values(" + pa.PatLog_Id + ",'" + pa.Pat_Name + "','" + pa.Pat_Sex + "'," + pa.Pat_Age + ",'" + pa.Pat_Sfz + "','" + pa.Pat_Phone + "')";
-            var da = DBHelper.ExecuteNonQuery(sql);
-            return da;
-        }
-        
-        /// <summary>
         /// 挂号
         /// </summary>
         /// <param name="re"></param>

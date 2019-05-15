@@ -23,17 +23,6 @@ namespace MedicalClinicApi.Controllers
             return bll.PatientShow(Pat_phone);
         }
         /// <summary>
-        /// 病人信息添加
-        /// </summary>
-        /// <param name="pa"></param>
-        /// <returns></returns>
-        [HttpPost]
-        public int PatientAdd(Patient pa)
-        {
-            return bll.PatientAdd(pa);
-        }
-
-        /// <summary>
         /// 挂号
         /// </summary>
         /// <param name="re"></param>
