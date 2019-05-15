@@ -73,5 +73,13 @@ join Patient p on dc.Pat_Id = p.Pat_Id");
             int i = Convert.ToInt32(DBHelper.ExecuteScalar(sql));
             return i;
         }
+        /// <summary>
+        /// 查询登陆表所有数据
+        /// </summary>
+        /// <returns></returns>
+        public List<StaffLogin> GetLoginTable()
+        {
+            return DBHelper.GetList<StaffLogin>("select * from StaffLogin");
+        }
     }
 }

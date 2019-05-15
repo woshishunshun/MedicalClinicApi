@@ -63,5 +63,13 @@ namespace BLL
         {
             return dl.LoginDoctor(name, pwd);
         }
+        /// <summary>
+        /// 查询登陆表所有数据
+        /// </summary>
+        /// <returns></returns>
+        public List<StaffLogin> GetLoginTable()
+        {
+            return dl.GetLoginTable();
+        }
     }
 }
