@@ -18,7 +18,7 @@ namespace MedicalClinicApi.Controllers
         /// <param name="patl">病人登陆实体类</param>
         /// <returns></returns>
         [HttpPost]
-        public int Post(PatientLogin patl)
+        public int PatientRegister(PatientLogin patl)
         {
             return bll.PatientRegister(patl);
         }
@@ -28,7 +28,7 @@ namespace MedicalClinicApi.Controllers
         /// <param name="PatientName">登陆名</param>
         /// <param name="PatientPwd">登陆密码</param>
         /// <returns></returns>
-        public int Get(string PatientName, string PatientPwd)
+        public int PatientLogin(string PatientName, string PatientPwd)
         {
             return bll.PatientLogin(PatientName, PatientPwd);
         }

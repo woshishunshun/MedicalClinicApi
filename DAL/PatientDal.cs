@@ -11,26 +11,14 @@ namespace DAL
     public class PatientDal
     {
         /// <summary>
-        /// 病人信息添加
+        /// 完善病人信息
         /// </summary>
-        /// <param name="pa"></param>
+        /// <param name="patient"></param>
         /// <returns></returns>
-        public int PatientAdd(Patient pa)
+        public int PatientInfo(Patient patient)
         {
-            string sql = "insert into Patient values(" + pa.PatLog_Id + ",'" + pa.Pat_Name + "','" + pa.Pat_Sex + "'," + pa.Pat_Age + ",'" + pa.Pat_Sfz + "','" + pa.Pat_Phone + "')";
-            var da = DBHelper.ExecuteNonQuery(sql);
-            return da;
-        }
-        /// <summary>
-        /// 病人信息修改
-        /// </summary>
-        /// <param name="pa"></param>
-        /// <returns></returns>
-        public int PatientUpdate(Patient pa)
-        {
-            string sql = "update Patient set PatLog_Id=" + pa.PatLog_Id + ",Pat_Name='" + pa.Pat_Name + "',Pat_Sex='" + pa.Pat_Sex + "',Pat_Age=" + pa.Pat_Age + ",Pat_Sfz='" + pa.Pat_Sfz + "',Pat_Phone='" + pa.Pat_Phone + "' where Pat_Id = " + pa.Pat_Id + "";
-            var da = DBHelper.ExecuteNonQuery(sql);
-            return da;
+            string strSql = string.Format("insert into Patient values({0},'{1}','{2}',{3},'{4}','{5}')",patient.PatLog_Id,patient.Pat_Name,patient.Pat_Sex,patient.Pat_Age,patient.Pat_Sfz,patient.Pat_Phone);
+            return DBHelper.ExecuteNonQuery(strSql);
         }
     }
 }

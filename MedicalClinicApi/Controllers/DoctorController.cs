@@ -13,6 +13,7 @@ namespace MedicalClinicApi.Controllers
     public class DoctorController : ApiController
     {
         DoctorBll dl = new DoctorBll();
+        ReturnrecordBll bl = new ReturnrecordBll();
         /// <summary>
         /// 显示就诊记录
         /// </summary>
@@ -54,6 +55,27 @@ namespace MedicalClinicApi.Controllers
         public List<Returnrecord> GetReturnrecords()
         {
             return dl.GetReturnrecords();
+        }
+        /// <summary>
+        /// 添加回访记录表
+        /// </summary>
+        /// <param name="r"></param>
+        /// <returns></returns>
+        public int AddReturnrecord(Returnrecord r)
+        {
+            return bl.AddReturnrecord(r);
+        }
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="name">姓名</param>
+        /// <param name="pwd">密码</param>
+        /// <returns></returns>
+        [HttpGet]
+        public int LoginDoctor(string name, string pwd)
+        {
+            int i = dl.LoginDoctor(name, pwd);
+            return i;
         }
     }
 }

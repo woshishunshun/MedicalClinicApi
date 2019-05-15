@@ -14,22 +14,14 @@ namespace MedicalClinicApi.Controllers
     {
         PatientBll bll = new PatientBll();
         /// <summary>
-        /// 病人信息添加
+        /// 完善病人信息
         /// </summary>
-        /// <param name="pa"></param>
+        /// <param name="patient"></param>
         /// <returns></returns>
-        public int PatientAdd(Patient pa)
+        [HttpPost]
+        public int PatientInfo(Patient patient)
         {
-            return bll.PatientAdd(pa);
-        }
-        /// <summary>
-        /// 病人信息修改
-        /// </summary>
-        /// <param name="pa"></param>
-        /// <returns></returns>
-        public int PatientUpdate(Patient pa)
-        {
-            return bll.PatientUpdate(pa);
+            return bll.PatientInfo(patient);
         }
     }
 }
