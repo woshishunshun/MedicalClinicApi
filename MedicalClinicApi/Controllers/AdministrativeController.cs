@@ -18,6 +18,7 @@ namespace MedicalClinicApi.Controllers
         /// 查询科室表 用于绑定下拉列表
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public List<Administrative> ShowAdministrative()
         {
             return bll.ShowAdministrative();
