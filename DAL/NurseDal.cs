@@ -15,9 +15,9 @@ namespace DAL
         /// </summary>
         /// <param name="Pat_phone"></param>
         /// <returns></returns>
-        public List<Patient> PatientShow(string Pat_phone)
+        public List<Patient> PatientShow(string phone)
         {
-            string sql = "select * from Patient where Pat_Phone = " + Pat_phone;
+            string sql = "select * from Patient where Pat_Phone = " + phone;
             var ds = DBHelper.GetDataTable(sql);
             var js = JsonConvert.SerializeObject(ds);
             var jd = JsonConvert.DeserializeObject<List<Patient>>(js);
@@ -42,9 +42,35 @@ namespace DAL
         /// <returns></returns>
         public int NurseLogin(string name, string pwd)
         {
-            string strSql = "select count(*) from StaffLogin where Sl_Name='" + name + "' and Sl_Pwd='" + pwd + "'";
-            var da = DBHelper.ExecuteScalar(strSql);
+            string sql = string.Format("select count(*) from StaffLogin where Sl_Name='{0}' and Sl_Pwd='{1}' and Sl_Type=2", name, pwd);
+            var da = DBHelper.ExecuteScalar(sql);
             return Convert.ToInt32(da);
         }
+        /// <summary>
+        /// 反填科室表
+        /// </summary>
+        /// <returns></returns>
+        public List<Administrative> AdministrativeShow()
+        {
+            string sql = "select * from Administrative";
+            var ds = DBHelper.GetDataTable(sql);
+            var js = JsonConvert.SerializeObject(ds);
+            var jd = JsonConvert.DeserializeObject<List<Administrative>>(js);
+            return jd;
+        }
+        /// <summary>
+        /// 二级联动医生表
+        /// </summary>
+        /// <param name="admId"></param>
+        /// <returns></returns>
+        public List<Doctor> DoctorShow(int admId)
+        {
+            string sql = "select Doc_Id,Doc_Name from Doctor where Adm_Id=" + admId;
+            var ds = DBHelper.GetDataTable(sql);
+            var js = JsonConvert.SerializeObject(ds);
+            var jd = JsonConvert.DeserializeObject<List<Doctor>>(js);
+            return jd;
+        }
     }
+    
 }
