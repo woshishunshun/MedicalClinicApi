@@ -22,5 +22,16 @@ namespace DAL
             var json = JsonConvert.SerializeObject(table);
             return JsonConvert.DeserializeObject<List<Administrative>>(json);
         }
+        /// <summary>
+        /// 查询医师表 绑定下拉
+        /// </summary>
+        /// <returns></returns>
+        public List<Doctor> ShowDoctor(int id)
+        {
+            string strSql = "select * from Doctor where Adm_Id="+id;
+            var table = DBHelper.GetDataTable(strSql);
+            var json = JsonConvert.SerializeObject(table);
+            return JsonConvert.DeserializeObject<List<Doctor>>(json);
+        }
     }
 }
