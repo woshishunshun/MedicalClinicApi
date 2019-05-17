@@ -17,7 +17,7 @@ namespace DAL
         /// <returns></returns>
         public List<Patient> PatientShow(string phone)
         {
-            string sql = "select * from Patient where Pat_Phone = " + phone;
+            string sql = "select * from Patient where Pat_Phone = '" + phone + "'";
             var ds = DBHelper.GetDataTable(sql);
             var js = JsonConvert.SerializeObject(ds);
             var jd = JsonConvert.DeserializeObject<List<Patient>>(js);
@@ -30,7 +30,7 @@ namespace DAL
         /// <returns></returns>
         public int PatientLoginAdd(Registration re)
         {
-            string sql = "insert into Patient values(" + re.Pat_Id + ",'" + re.Reg_Time + "'," + re.Adm_Id + "," + re.Doc_Id + "," + re.Reg_Type + ")";
+            string sql = "insert into Registration values(" + re.Pat_Id + ",'" + re.Reg_Time + "'," + re.Adm_Id + "," + re.Doc_Id + "," + re.Reg_Type + ")";
             var da = DBHelper.ExecuteNonQuery(sql);
             return da;
         }
