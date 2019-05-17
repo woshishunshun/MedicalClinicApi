@@ -47,6 +47,7 @@ namespace MedicalClinicApi.Controllers
         /// 反填科室表
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public List<Administrative> AdministrativeShow()
         {
             return bll.AdministrativeShow();
@@ -56,6 +57,7 @@ namespace MedicalClinicApi.Controllers
         /// </summary>
         /// <param name="admId"></param>
         /// <returns></returns>
+        [HttpGet]
         public List<Doctor> DoctorShow(int admId)
         {
             return bll.DoctorShow(admId);
