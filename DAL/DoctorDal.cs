@@ -26,7 +26,7 @@ join Patient p on dc.Pat_Id = p.Pat_Id");
         /// <returns></returns>
         public int AddGetDoctorecord(Doctorecord d)
         {
-            string sql = string.Format("insert into Registration values('{0}','{1}','{2}','{3}','{4}','{5}','{6}')",d.Dcr_Id,d.Doc_Id,d.Adm_Id,d.Pat_Id,d.Dcr_Remake,d.Dcr_Time,d.Dr_Id);
+            string sql = string.Format("insert into [Doctorecord] values('{0}','{1}','{2}','{3}','{4}','{5}')", d.Doc_Id,d.Adm_Id,d.Pat_Id,d.Dcr_Remake,d.Dcr_Time,d.Dr_Name);
             return DBHelper.ExecuteNonQuery(sql);
         }
         /// <summary>

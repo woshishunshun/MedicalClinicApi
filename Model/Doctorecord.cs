@@ -14,6 +14,6 @@ namespace Model
         public int Pat_Id { get; set; }//病人外键 关联病人外键
         public string Dcr_Remake { get; set; }// 诊断说明
         public string Dcr_Time { get; set; }//  结束就诊时间
-        public int Dr_Id { get; set; }// 开的药品
+        public string Dr_Name { get; set; }// 开的药品
     }
 }

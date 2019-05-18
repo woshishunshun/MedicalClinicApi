@@ -86,5 +86,6 @@ namespace MedicalClinicApi.Controllers
         {
             return dl.GetLoginTable();
         }
+   
     }
 }
