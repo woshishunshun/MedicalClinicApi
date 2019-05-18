@@ -23,5 +23,14 @@ namespace MedicalClinicApi.Controllers
         {
             return bll.ShowAdministrative();
         }
+        /// <summary>
+        /// 查询医师表 绑定下拉
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public List<Doctor> ShowDoctor(int id)
+        {
+            return bll.ShowDoctor(id);
+        }
     }
 }
