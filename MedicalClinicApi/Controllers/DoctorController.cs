@@ -77,5 +77,15 @@ namespace MedicalClinicApi.Controllers
             int i = dl.LoginDoctor(name, pwd);
             return i;
         }
+        [HttpGet]
+        /// <summary>
+        /// 查询登陆表所有数据
+        /// </summary>
+        /// <returns></returns>
+        public List<StaffLogin> GetLoginTable()
+        {
+            return dl.GetLoginTable();
+        }
+   
     }
 }

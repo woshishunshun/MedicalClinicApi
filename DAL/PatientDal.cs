@@ -20,5 +20,13 @@ namespace DAL
             string strSql = string.Format("insert into Patient values({0},'{1}','{2}',{3},'{4}','{5}')",patient.PatLog_Id,patient.Pat_Name,patient.Pat_Sex,patient.Pat_Age,patient.Pat_Sfz,patient.Pat_Phone);
             return DBHelper.ExecuteNonQuery(strSql);
         }
+        /// <summary>
+        /// 显示病人信息
+        /// </summary>
+        /// <returns></returns>
+        public List<Patient> GetPatients()
+        {
+            return DBHelper.GetList<Patient>("select * from Patient");
+        }
     }
 }

@@ -23,5 +23,14 @@ namespace MedicalClinicApi.Controllers
         {
             return bll.PatientInfo(patient);
         }
+        /// <summary>
+        /// 显示病人信息
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public List<Patient> GetPatients()
+        {
+            return bll.GetPatients();
+        }
     }
 }

@@ -21,5 +21,13 @@ namespace BLL
         {
             return dal.PatientInfo(patient);
         }
+        /// <summary>
+        /// 显示病人信息
+        /// </summary>
+        /// <returns></returns>
+        public List<Patient> GetPatients()
+        {
+            return dal.GetPatients();
+        }
     }
 }

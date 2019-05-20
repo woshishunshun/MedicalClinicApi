@@ -28,6 +28,7 @@ namespace MedicalClinicApi.Controllers
         /// <param name="PatientName">登陆名</param>
         /// <param name="PatientPwd">登陆密码</param>
         /// <returns></returns>
+        [HttpGet]
         public int PatientLogin(string PatientName, string PatientPwd)
         {
             return bll.PatientLogin(PatientName, PatientPwd);

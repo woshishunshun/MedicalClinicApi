@@ -16,20 +16,10 @@ namespace BLL
         /// </summary>
         /// <param name="Pat_phone"></param>
         /// <returns></returns>
-        public List<Patient> PatientShow(string Pat_phone)
+        public List<Patient> PatientShow(string phone)
         {
-            return dal.PatientShow(Pat_phone);
+            return dal.PatientShow(phone);
         }
-        /// <summary>
-        /// 病人信息添加
-        /// </summary>
-        /// <param name="pa"></param>
-        /// <returns></returns>
-        public int PatientAdd(Patient pa)
-        {
-            return dal.PatientAdd(pa);
-        }
-
         /// <summary>
         /// 挂号
         /// </summary>
@@ -48,6 +38,23 @@ namespace BLL
         public int NurseLogin(string name, string pwd)
         {
             return dal.NurseLogin(name,pwd);
+        }
+        /// <summary>
+        /// 反填科室表
+        /// </summary>
+        /// <returns></returns>
+        public List<Administrative> AdministrativeShow()
+        {
+            return dal.AdministrativeShow();
+        }
+        /// <summary>
+        /// 二级联动医生表
+        /// </summary>
+        /// <param name="admId"></param>
+        /// <returns></returns>
+        public List<Doctor> DoctorShow(int admId)
+        {
+            return dal.DoctorShow(admId);
         }
     }
 }

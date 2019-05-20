@@ -18,21 +18,10 @@ namespace MedicalClinicApi.Controllers
         /// <param name="Pat_phone"></param>
         /// <returns></returns>
         [HttpGet]
-        public List<Patient> PatientShow(string Pat_phone)
+        public List<Patient> PatientShow(string phone)
         {
-            return bll.PatientShow(Pat_phone);
+            return bll.PatientShow(phone);
         }
-        /// <summary>
-        /// 病人信息添加
-        /// </summary>
-        /// <param name="pa"></param>
-        /// <returns></returns>
-        [HttpPost]
-        public int PatientAdd(Patient pa)
-        {
-            return bll.PatientAdd(pa);
-        }
-
         /// <summary>
         /// 挂号
         /// </summary>
@@ -53,6 +42,25 @@ namespace MedicalClinicApi.Controllers
         public int NurseLogin(string name, string pwd)
         {
             return bll.NurseLogin(name, pwd);
+        }
+        /// <summary>
+        /// 反填科室表
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public List<Administrative> AdministrativeShow()
+        {
+            return bll.AdministrativeShow();
+        }
+        /// <summary>
+        /// 二级联动医生表
+        /// </summary>
+        /// <param name="admId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public List<Doctor> DoctorShow(int admId)
+        {
+            return bll.DoctorShow(admId);
         }
     }
 }

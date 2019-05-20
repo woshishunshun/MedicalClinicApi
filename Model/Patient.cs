@@ -15,5 +15,6 @@ namespace Model
         public int Pat_Age { get; set; }//病人年龄
         public string Pat_Sfz { get; set; }// 病人身份证
         public string Pat_Phone { get; set; }// 病人联系电话
+        public string Pat_Allergy { get; set; } // 有无过敏史
     }
 }
