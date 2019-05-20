@@ -12,7 +12,26 @@ namespace MedicalClinicApi.Controllers
     public class AdministratorController : ApiController
     {
         AdministratorBll bll = new AdministratorBll();
-
+        /// <summary>
+        /// 医生登录
+        /// </summary>
+        /// <param name="Name"></param>
+        /// <param name="Pwd"></param>
+        /// <returns></returns>
+        public List<StaffLogin> Login(string Name, string Pwd)
+        {
+            return bll.Login(Name, Pwd);
+        }
+        /// <summary>
+        /// 添加登录界面
+        /// </summary>
+        /// <param name="staff"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public int LoginAdd(StaffLogin staff)
+        {
+            return bll.LoginAdd(staff);
+        }
         /// <summary>
         /// 显示医生
         /// </summary>
@@ -32,6 +51,15 @@ namespace MedicalClinicApi.Controllers
         public int DoctorAdd(Doctor m)
         {
             return bll.DoctorAdd(m);
+        }
+        /// <summary>
+        /// 查询科室表
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public List<Administrative> administrativesShow()
+        {
+            return bll.administrativesShow();
         }
         /// <summary>
         /// 删除医生信息
@@ -75,7 +103,7 @@ namespace MedicalClinicApi.Controllers
         /// <param name="Name"></param>
         /// <returns></returns>
         [HttpGet]
-        public List<Nurse> NurseShow(string Name)
+        public List<Nurse> NurseShow(string Name="")
         {
             return bll.NurseShow(Name);
         }
