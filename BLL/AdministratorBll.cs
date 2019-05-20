@@ -15,7 +15,16 @@ namespace BLL
         {
             return dal.Login(Name, Pwd);
         }
-        public List<StaffLogin> Login()
+        /// <summary>
+        /// 添加登录界面
+        /// </summary>
+        /// <param name="staff"></param>
+        /// <returns></returns>
+        public int LoginAdd(StaffLogin staff)
+        {
+            return dal.LoginAdd(staff);
+        }
+            public List<StaffLogin> Login()
         {
             return dal.Login();
         }
@@ -38,11 +47,19 @@ namespace BLL
             return dal.DoctorAdd(m);
         }
         /// <summary>
-        /// 删除医生信息
+        /// 查询科室表
         /// </summary>
-        /// <param name="id"></param>
         /// <returns></returns>
-        public int DeleteDoctor(int id)
+        public List<Administrative> administrativesShow()
+        {
+            return dal.administrativesShow();
+        }
+            /// <summary>
+            /// 删除医生信息
+            /// </summary>
+            /// <param name="id"></param>
+            /// <returns></returns>
+            public int DeleteDoctor(int id)
         {
             return dal.DeleteDoctor(id);
         }
