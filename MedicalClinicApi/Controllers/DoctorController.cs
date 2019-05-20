@@ -57,15 +57,6 @@ namespace MedicalClinicApi.Controllers
             return dl.GetReturnrecords();
         }
         /// <summary>
-        /// 添加回访记录表
-        /// </summary>
-        /// <param name="r"></param>
-        /// <returns></returns>
-        public int AddReturnrecord(Returnrecord r)
-        {
-            return bl.AddReturnrecord(r);
-        }
-        /// <summary>
         /// 登录
         /// </summary>
         /// <param name="name">姓名</param>
@@ -86,6 +77,24 @@ namespace MedicalClinicApi.Controllers
         {
             return dl.GetLoginTable();
         }
-   
+        /// <summary>
+        /// 获取所有数据
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public List<Doctor> GetDoctors()
+        {
+            return dl.GetDoctors();
+        }
+        /// <summary>
+        /// 添加回访记录表
+        /// </summary>
+        /// <param name="r"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public int AddReturnrecord(Returnrecord r)
+        {
+            return dl.AddReturnrecord(r);
+        }
     }
 }

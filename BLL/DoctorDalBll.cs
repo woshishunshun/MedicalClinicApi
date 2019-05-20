@@ -71,5 +71,22 @@ namespace BLL
         {
             return dl.GetLoginTable();
         }
+        /// <summary>
+        /// 获取所有数据
+        /// </summary>
+        /// <returns></returns>
+        public List<Doctor> GetDoctors()
+        {
+            return dl.GetDoctors();
+        }
+        /// <summary>
+        /// 添加回访记录表
+        /// </summary>
+        /// <param name="r"></param>
+        /// <returns></returns>
+        public int AddReturnrecord(Returnrecord r)
+        {
+            return dl.AddReturnrecord(r);
+        }
     }
 }
