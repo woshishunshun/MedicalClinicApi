@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AdministrativeBll.cs" />
     <Compile Include="AdministratorBll.cs" />
+    <Compile Include="AppointmentBll.cs" />
     <Compile Include="DoctorDalBll.cs" />
     <Compile Include="DoctorecordBll.cs" />
     <Compile Include="DrugBll.cs" />

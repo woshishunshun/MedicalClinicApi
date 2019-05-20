@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administrative.cs" />
+    <Compile Include="Appointment.cs" />
     <Compile Include="Doctor.cs" />
     <Compile Include="Doctorecord.cs" />
     <Compile Include="Drug.cs" />

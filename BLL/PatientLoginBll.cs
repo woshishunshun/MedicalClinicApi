@@ -31,5 +31,13 @@ namespace BLL
         {
             return patldal.PatientLogin(PatientName, PatientPwd);
         }
+        /// <summary>
+        /// 获取病人登陆表所有信息
+        /// </summary>
+        /// <returns></returns>
+        public List<PatientLogin> GetPatient()
+        {
+            return patldal.GetPatient();
+        }
     }
 }

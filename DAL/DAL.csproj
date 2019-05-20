@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="AdministratorDal.cs" />
     <Compile Include="AdministrativeDal.cs" />
+    <Compile Include="AppointmentDal.cs" />
     <Compile Include="DBHelper.cs" />
     <Compile Include="DoctorDal.cs" />
     <Compile Include="DoctorecordDal.cs" />

@@ -33,5 +33,14 @@ namespace MedicalClinicApi.Controllers
         {
             return bll.PatientLogin(PatientName, PatientPwd);
         }
+        /// <summary>
+        /// 获取病人登陆表所有信息
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public List<PatientLogin> GetPatient()
+        {
+            return bll.GetPatient();
+        }
     }
 }

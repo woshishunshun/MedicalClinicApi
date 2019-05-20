@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Model;
+using Newtonsoft.Json;
 
 namespace DAL
 {
@@ -30,6 +31,17 @@ namespace DAL
         {
             string strSql = "select count(*) from PatientLogin where PatLog_LogName='"+ PatientName + "' and PatLog_LogPwd='"+ PatientPwd + "'";
             return Convert.ToInt32(DBHelper.ExecuteScalar(strSql));
+        }
+        /// <summary>
+        /// 获取病人登陆表所有信息
+        /// </summary>
+        /// <returns></returns>
+        public List<PatientLogin> GetPatient()
+        {
+            string strSql = "select * from PatientLogin";
+            var table= DBHelper.GetDataTable(strSql);
+            var json = JsonConvert.SerializeObject(table);
+            return JsonConvert.DeserializeObject<List<PatientLogin>>(json);
         }
     }
 }
