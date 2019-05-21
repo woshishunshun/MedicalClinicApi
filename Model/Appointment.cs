@@ -15,5 +15,6 @@ namespace Model
         public int App_Administrative { get; set; }
         public int App_Doctor { get; set; }
         public string App_Remark { get; set; }
+        
     }
 }

@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using Model;
 using BLL;
+using System.Data;
 
 namespace MedicalClinicApi.Controllers
 {
@@ -21,6 +22,16 @@ namespace MedicalClinicApi.Controllers
         public List<Patient> PatientShow(string phone)
         {
             return bll.PatientShow(phone);
+        }
+        /// <summary>
+        /// 不可重复挂号
+        /// </summary>
+        /// <param name="re"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public int PatientLoginShow(int pat_id, string reg_time, int doc_id)
+        {
+            return bll.PatientLoginShow(pat_id, reg_time, doc_id);
         }
         /// <summary>
         /// 挂号
@@ -61,6 +72,28 @@ namespace MedicalClinicApi.Controllers
         public List<Doctor> DoctorShow(int admId)
         {
             return bll.DoctorShow(admId);
+        }
+        /// <summary>
+        /// 根据时间查询预约挂号
+        /// </summary>
+        /// <param name="date"></param>
+        /// <param name="time"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public List<Patient> AppointmentShow(string date, string time)
+        {
+             var list= bll.AppointmentShow(date, time);
+            return list;
+        }
+        /// <summary>
+        /// 获取预约查询病人
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public List<Registration> PatientShows(int id)
+        {
+            return bll.PatientShows(id);
         }
     }
 }
